@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block addUpisi %}
+<form method="post">
+        <h2>Upis studenta na predmet: </h2>
+        {{data}}
+    <br>
+    <input type="submit" value="Potvrdi">
+    {% csrf_token %}
+</form>
+{% endblock %}

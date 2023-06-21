@@ -1,0 +1,21 @@
+{% extends 'projekti/main.html' %}
+{% block content %}
+<div class="col-md-5">
+    <h5>Upis</h5>
+    <br>
+    <div class="card card-body">
+        <table class="table">
+            <tr>
+                <th>Upis</th>
+            </tr>
+            {% for upis in upisi %}
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'editupis' upis.id %}">Edit Upis {{upis.predmet_id}}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

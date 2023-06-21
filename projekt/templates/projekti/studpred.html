@@ -1,0 +1,43 @@
+{% extends 'projekti/main.html' %}
+
+{% block content %}
+    <h3>Enrolled Students - {{ predmet.name }}</h3>
+    <h4>Students who lost the signature:</h4>
+    <ul>
+        {% for upis in izgubili_potpis %}
+            <li>{{ upis.user_id}}
+                <div class="col-md-5">
+                    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'editupis' upis.user_id predmet.id %}">Edit upis</a>
+              </div>
+          </li>
+        {% empty %}
+            <li>No students </li>
+        {% endfor %}
+    </ul>
+
+    <h4>Students who received the signature but have not passed:</h4>
+    <ul>
+        {% for upis in dobili_potpis %}
+            <li>{{ upis.user_id }}
+                <div class="col-md-5">
+                      <a class="btn btn-primary btn-sm btn-block" href ="{% url 'editupis' upis.user_id predmet.id %}">Edit upis</a>
+                </div>
+            </li>
+        {% empty %}
+            <li>No students </li>
+        {% endfor %}
+    </ul>
+
+    <h4>Students who passed the subject:</h4>
+    <ul>
+        {% for upis in polozili_predmet %}
+            <li>{{ upis.user_id }}
+                <div class="col-md-5">
+                    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'editupis' upis.user_id  predmet.id%}">Edit upis</a>
+              </div>
+          </li>
+        {% empty %}
+            <li>No students</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

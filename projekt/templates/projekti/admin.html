@@ -1,0 +1,15 @@
+{%extends 'projekti/main.html'%}
+{% block content %}
+    <br>
+    <div class="col-md-5">
+    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'adduser' %}">Add User</a>
+    <br>
+    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'professors' %}">Professors</a>
+    <br>
+    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'students' %}">Students</a>
+    <br>
+    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'addpred' %}">Add  Predmet</a>
+    <br>
+    <a class="btn btn-primary btn-sm btn-block" href ="{% url 'predmeti' %}">Predmeti</a>
+    </div>
+{%endblock%}
